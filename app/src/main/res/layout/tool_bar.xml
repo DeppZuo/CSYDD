@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title_bar_height"
+    android:minHeight="@dimen/title_bar_height"
+    android:background="@color/bg_white"
+    app:contentInsetStart="0dp"
+    >
+
+    <TextView
+        android:id="@+id/left_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/title_bar_margin_left"
+        android:layout_gravity="left|center_vertical"
+        android:textSize="15sp"
+        android:clickable="false"
+        android:textColor="@color/color_text_63"
+        android:visibility="visible"
+        />
+
+    <TextView
+        android:id="@+id/center_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:maxWidth="240dp"
+        android:maxLines="1"
+        android:textColor="@color/color_text_63"
+        android:textSize="@dimen/title_bar_title_text_size"
+        />
+
+    <TextView
+        android:id="@+id/right_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right|center_vertical"
+        android:gravity="center"
+        android:layout_marginRight="@dimen/title_bar_margin_right"
+        android:textColor="@color/color_text_63"
+        android:textSize="15sp"
+        android:visibility="visible"
+        />
+</android.support.v7.widget.Toolbar>

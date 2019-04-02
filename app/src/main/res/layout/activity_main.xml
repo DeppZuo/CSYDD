@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_top_fn"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/ll_state_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/bg_white" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@color/color_dark" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginLeft="@dimen/dimen_8dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginRight="@dimen/dimen_8dp"
+            app:cardBackgroundColor="@color/bg_top_fn"
+            app:cardCornerRadius="@dimen/dimen_angle_half"
+            app:cardElevation="@dimen/dimen_angle_half"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_24dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="黄泥隆盛网格"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/sp16" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="2019年4月2日"
+                        android:textColor="@color/color_blue"
+                        android:textSize="@dimen/sp14" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:text="网格经理：李某某"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/sp14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:text="归属片区：宝蓝街片区"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/sp14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:text="归属片区：宝蓝街片区"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/sp14" />
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_8dp"
+        android:layout_marginRight="@dimen/dimen_8dp"
+        app:cardBackgroundColor="@color/bg_top_fn"
+        app:cardCornerRadius="@dimen/dimen_angle_half"
+        app:cardElevation="@dimen/dimen_angle_half"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/processplan_tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40dp"
+            app:tabIndicatorColor="@color/blue_colr"
+            app:tabIndicatorFullWidth="false"
+            app:tabSelectedTextColor="@color/color_white"
+            app:tabTextColor="@color/color_grey" />
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/processplan_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:layout_weight="1"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+</LinearLayout>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_9dp">9dp</dimen>
+    <dimen name="dimen_1dp">1dp</dimen>
+    <dimen name="dimen_halfdp">0.5dp</dimen>
+    <dimen name="dimen_4dp">4dp</dimen>
+    <dimen name="dimen_16dp">16dp</dimen>
+    <dimen name="dimen_14dp">14dp</dimen>
+    <dimen name="dimen_10dp">10dp</dimen>
+    <dimen name="dimen_13dp">13dp</dimen>
+    <dimen name="dimen_12dp">12dp</dimen>
+    <dimen name="dimen_24dp">24dp</dimen>
+    <dimen name="dimen_32dp">32dp</dimen>
+    <dimen name="dimen_48dp">48dp</dimen>
+    <dimen name="dimen_64dp">64dp</dimen>
+    <dimen name="dimen_56dp">56dp</dimen>
+    <dimen name="dimen_40dp">40dp</dimen>
+    <dimen name="dimen_30dp">30dp</dimen>
+    <dimen name="dimen_76dp">76dp</dimen>
+    <dimen name="dimen_8dp">8dp</dimen>
+    <dimen name="dimen_20dp">20dp</dimen>
+    <dimen name="dimen_158dp">158dp</dimen>
+    <dimen name="dimen_100dp">100dp</dimen>
+    <dimen name="dimen_150dp">150dp</dimen>
+    <dimen name="dimen_ed_hight">40dp</dimen>
+    <dimen name="dimen_ed_div">16dp</dimen>
+    <dimen name="dimen_angle_half">3dp</dimen>
+    <dimen name="dimen_angle_round">20dp</dimen>
+    <dimen name="me_top">250dp</dimen>
+    <dimen name="border">8dp</dimen>
+    <dimen name="sp8">8sp</dimen>
+    <dimen name="sp10">10sp</dimen>
+    <dimen name="sp12">12sp</dimen>
+    <dimen name="sp13">13sp</dimen>
+    <dimen name="sp14">14sp</dimen>
+    <dimen name="sp15">15sp</dimen>
+    <dimen name="sp16">16sp</dimen>
+    <dimen name="sp18">18sp</dimen>
+    <dimen name="sp20">20sp</dimen>
+    <dimen name="sp22">22sp</dimen>
+    <dimen name="sp24">24sp</dimen>
+    <dimen name="sp30">30sp</dimen>
+
+    <!-- 文字大小 -->
+    <dimen name="common_text_size">16sp</dimen> <!-- 通用文字大小 -->
+    <dimen name="sub_text_size">14sp</dimen>
+    <dimen name="smaller_text_size">12sp</dimen>
+    <dimen name="larg_text_size">25sp</dimen>
+    <dimen name="larg_sub_text_size">20sp</dimen>
+
+    <!--输入框-->
+    <dimen name="input_box_height">40dp</dimen> <!-- 输入框高度 -->
+    <dimen name="input_box_text_size">16sp</dimen> <!-- 输入框文字大小 -->
+
+    <!-- 按钮 -->
+    <dimen name="common_btn_height">40dp</dimen><!-- 高度 -->
+    <dimen name="common_btn_text_size">18sp</dimen><!-- 文字大小 -->
+    <dimen name="common_btn_bottom">11dp</dimen><!-- 文字大小 -->
+
+    <!-- 通用页面两侧的padding -->
+    <dimen name="common_left_padding">16dp</dimen>
+    <dimen name="common_right_padding">16dp</dimen>
+    <dimen name="common_left_margin">16dp</dimen>
+    <dimen name="common_right_margin">16dp</dimen>
+
+    <!-- 标题栏 -->
+    <dimen name="title_bar_height">45dp</dimen> <!-- 标题栏高度 -->
+    <dimen name="title_bar_title_text_size">18sp</dimen> <!-- 标题栏主标题文字大小 -->
+    <dimen name="title_bar_subtitle_text_size">17sp</dimen> <!-- 标题栏副标题文字大小 -->
+    <dimen name="title_bar_margin_left">15dp</dimen>
+    <dimen name="title_bar_margin_right">15dp</dimen>
+    <dimen name="title_bar_image_height">40dp</dimen>
+    <dimen name="title_bar_sub_margin_left">13dp</dimen>
+    <dimen name="title_bar_sub_margin_right">13dp</dimen>
+
+    !--首页-->
+    <dimen name="first_banner">180dp</dimen>
+    <dimen name="first_toptobanner">-36dp</dimen>
+    <dimen name="first_button_hight">40dp</dimen>
+    <dimen name="first_button_width">300dp</dimen>
+    <dimen name="first_secondbanner">90dp</dimen>
+    <dimen name="first_bg_xjd">190dp</dimen>
+    <dimen name="dimen_15dp">15dp</dimen>
+    <dimen name="bottombar_height">48dp</dimen>
+    <!--首页-->
+    <dimen name="btn_start">150dp</dimen>
+    <dimen name="bg_huaxin">180dp</dimen>
+    <dimen name="bt_padding">5dp</dimen>
+
+    <!--认证资料-->
+    <dimen name="certificate_padding">9dp</dimen>
+    <dimen name="certificate_margin_left">12dp</dimen>
+    <dimen name="certificate_text_1_margin">9dp</dimen>
+    <dimen name="certificate_text_size_1">13sp</dimen>
+
+    <dimen name="certificate_icon_padding_top">15dp</dimen>
+    <dimen name="certificate_icon_text_padding_top">11dp</dimen>
+    <dimen name="certificate_icon_padding_top_1">4dp</dimen>
+    <dimen name="certificate_icon_padding_bottom">15dp</dimen>
+    <dimen name="certificate_icon_margin_top">6dp</dimen>
+    <dimen name="certificate_icon_text_size">11sp</dimen>
+
+    <dimen name="certificate_margin_left_right">40dp</dimen>
+    <dimen name="certificate_text_tip_size">12sp</dimen>
+
+    <dimen name="family_loan_text_tip_size">10sp</dimen>
+    <dimen name="family_loan_margin_left_right">32dp</dimen>
+    
+    <!--兴家贷 申请记录列表-->
+    <dimen name="family_apply_list_text_size">16sp</dimen>
+    <dimen name="family_apply_list_text_size_1">14sp</dimen>
+    <dimen name="family_apply_list_text_size_2">12sp</dimen>
+    <dimen name="family_apply_list_text_size_3">12sp</dimen>
+
+    <!--兴家贷认证资料选填项高度适配-->
+    <dimen name="family_certificate_layout_height_0">66dp</dimen>
+    <dimen name="family_certificate_layout_height_1">115dp</dimen>
+    <dimen name="family_certificate_layout_height_2">163dp</dimen>
+    <dimen name="family_certificate_layout_height_3">211dp</dimen>
+    <dimen name="family_certificate_layout_height_4">261dp</dimen>
+    <dimen name="family_certificate_layout_height_5">309dp</dimen>
+    <dimen name="family_certificate_layout_height_6">360dp</dimen>
+
+
+
+</resources>
