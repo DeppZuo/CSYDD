@@ -1,1 +1,14 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
 /build
+.idea/vcs.xml
+/.idea/
+/gradlew
+/gradlew.bat
+/build.gradle
+/gradle/
+/app/build/
+/push/build/
+/app/release/
