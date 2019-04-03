@@ -3,8 +3,10 @@ package com.csmobile.csyd.base;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.csmobile.csyd.R;
 import com.csmobile.csyd.mvp.IPresent;
 import com.csmobile.csyd.mvp.IView;
@@ -127,5 +130,23 @@ public abstract class BaseActivity<P extends IPresent> extends RxAppCompatActivi
         getvDelegate().destory();
         p = null;
         vDelegate = null;
+    }
+    /**
+     * 显示双按钮对话框
+     *
+     * @param msg
+     * @param callback
+     */
+    public void showNoticeDialog(String msg, MaterialDialog.SingleButtonCallback callback) {
+        getvDelegate().showNoticeDialog(msg, callback);
+    }
+    /**
+     * 跳转到系统设置界面
+     */
+    public void gotoSetting() {
+        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        Uri uri = Uri.fromParts("package", getPackageName(), null);
+        intent.setData(uri);
+        startActivity(intent);
     }
 }
