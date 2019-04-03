@@ -5,9 +5,9 @@
         <item name="android:windowActionBar">false</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="colorPrimary">@color/color_orange_bg</item>
-        <item name="colorPrimaryDark">@color/color_orange_bg</item>
-        <item name="colorAccent">@color/color_orange_bg</item>
+        <item name="colorPrimary">@color/color_grey</item>
+        <item name="colorPrimaryDark">@color/color_grey</item>
+        <item name="colorAccent">@color/color_grey</item>
     </style>
     <!--欢迎页面style-->
     <style name="SplashThemeOriginal" parent="AppTheme">
