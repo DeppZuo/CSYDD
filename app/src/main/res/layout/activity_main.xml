@@ -48,6 +48,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:id="@+id/tv_title_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="黄泥隆盛网格"
@@ -64,6 +65,7 @@
                 </RelativeLayout>
 
                 <TextView
+                    android:id="@+id/tv_name_manager"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_10dp"
@@ -72,6 +74,7 @@
                     android:textSize="@dimen/sp14" />
 
                 <TextView
+                    android:id="@+id/tv_dire"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_4dp"
