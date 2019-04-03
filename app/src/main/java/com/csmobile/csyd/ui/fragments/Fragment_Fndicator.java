@@ -52,18 +52,19 @@ public class Fragment_Fndicator extends BaseFragment<PFndicator> {
         recyclerview.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         recyclerview.setAdapter(adapter_fndicator);
         List<BeanFndicator> listdata = new ArrayList<BeanFndicator>();
-        listdata.add(new BeanFndicator("hahahha"));
-        listdata.add(new BeanFndicator("hahahha"));
-        listdata.add(new BeanFndicator("hahahha"));
-        listdata.add(new BeanFndicator("hahahha"));
-        listdata.add(new BeanFndicator("hahahha"));
-        listdata.add(new BeanFndicator("hahahha"));
-        listdata.add(new BeanFndicator("hahahha"));
-        listdata.add(new BeanFndicator("hahahha"));
-        listdata.add(new BeanFndicator("hahahha"));
-        listdata.add(new BeanFndicator("hahahha"));
-        listdata.add(new BeanFndicator("hahahha"));
-        listdata.add(new BeanFndicator("hahahha"));
+        listdata.add(new BeanFndicator("当日收入", 1, 0));
+        listdata.add(new BeanFndicator("当日放号", 0, 1));
+        listdata.add(new BeanFndicator("期末份额", 0, 1));
+        listdata.add(new BeanFndicator("期末份额", 1, 1));
+        listdata.add(new BeanFndicator("当日放号", 0, 1));
+        listdata.add(new BeanFndicator("期末份额", 0, 1));
+        listdata.add(new BeanFndicator("当日收入", 1, 0));
+        listdata.add(new BeanFndicator("当日放号", 0, 1));
+        listdata.add(new BeanFndicator("期末份额", 0, 1));
+        listdata.add(new BeanFndicator("当日收入", 1, 0));
+        listdata.add(new BeanFndicator("当日放号", 0, 1));
+        listdata.add(new BeanFndicator("期末份额", 0, 1));
+
         recyclerview.setPage(10, 30);//必须设置setPage，否则上拉加载更多会无效
         adapter_fndicator.setNewData(listdata);
         recyclerview.setOnRefreshAndLoadMoreListener(new XRecyclerView.OnRefreshAndLoadMoreListener() {
