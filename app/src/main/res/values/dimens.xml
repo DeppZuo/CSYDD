@@ -24,7 +24,7 @@
     <dimen name="dimen_150dp">150dp</dimen>
     <dimen name="dimen_ed_hight">40dp</dimen>
     <dimen name="dimen_ed_div">16dp</dimen>
-    <dimen name="dimen_angle_half">3dp</dimen>
+    <dimen name="dimen_angle_half">4dp</dimen>
     <dimen name="dimen_angle_round">20dp</dimen>
     <dimen name="me_top">250dp</dimen>
     <dimen name="border">8dp</dimen>
@@ -105,7 +105,7 @@
 
     <dimen name="family_loan_text_tip_size">10sp</dimen>
     <dimen name="family_loan_margin_left_right">32dp</dimen>
-    
+
     <!--兴家贷 申请记录列表-->
     <dimen name="family_apply_list_text_size">16sp</dimen>
     <dimen name="family_apply_list_text_size_1">14sp</dimen>
@@ -120,7 +120,6 @@
     <dimen name="family_certificate_layout_height_4">261dp</dimen>
     <dimen name="family_certificate_layout_height_5">309dp</dimen>
     <dimen name="family_certificate_layout_height_6">360dp</dimen>
-
 
 
 </resources>
