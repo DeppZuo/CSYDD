@@ -16,5 +16,6 @@ public final class Consts {
     public static String APP_HOST = BuildConfig.host;//baseURL
     public final static boolean DEBUG = BuildConfig.DEBUG;
     public final static String APPSP = "YDAPPSP";//app存储
+    public final static String RESCODE_SUCCESS = "00";//为成功，其他失败
 
 }

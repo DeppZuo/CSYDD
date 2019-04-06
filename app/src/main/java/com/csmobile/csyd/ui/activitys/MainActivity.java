@@ -13,6 +13,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -45,6 +46,8 @@ public class MainActivity extends BaseActivity<PMainActivity> {
     TabLayout tabLayout;
     @BindView(R.id.processplan_viewPager)
     ViewPager viewPager;
+    @BindView(R.id.tv_chlnum)
+    TextView tv_chlnum;//渠道数字
     List<Fragment> fragmentList = new ArrayList<>();
     String[] titles = {"所有指标", "本月重要指标"};
     XFragmentAdapter adapter;

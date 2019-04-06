@@ -6,21 +6,10 @@ package com.csmobile.csyd.model.bean;
  * <p>创建时间：2019/4/2<p>
  */
 public class BeanFndicator {
-    public String title;
-    public int type_red;
-    public int type_up;
-
-    public BeanFndicator(String title, int type_red, int type_up) {
-        this.title = title;
-        this.type_red = type_red;
-        this.type_up = type_up;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public double monthData;// 当月数据
+    public double cpRatio;// 完成率
+    public int dayData;//当日数据
+    public int rank;//排名
+    public int quotaId;//指标ID
+    public int showOrd;//指标展示顺序
 }

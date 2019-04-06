@@ -20,7 +20,9 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="allowBackup,label,theme,icon,android:appComponentFactory">
+        tools:replace="allowBackup,label,theme,icon,android:appComponentFactory"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:targetApi="p">
         <!--适配华为（huawei）刘海屏-->
         <meta-data
             android:name="android.notch_support"

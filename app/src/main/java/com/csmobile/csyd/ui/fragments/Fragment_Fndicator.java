@@ -8,6 +8,7 @@ import android.support.v7.widget.GridLayoutManager;
 import com.csmobile.csyd.R;
 import com.csmobile.csyd.base.BaseFragment;
 import com.csmobile.csyd.model.bean.BeanFndicator;
+import com.csmobile.csyd.model.response.Fndicator_Res;
 import com.csmobile.csyd.present.PFndicator;
 import com.csmobile.csyd.ui.adapter.Adapter_Fndicator;
 import com.csmobile.csyd.utils.ToastUtils;
@@ -52,18 +53,6 @@ public class Fragment_Fndicator extends BaseFragment<PFndicator> {
         recyclerview.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         recyclerview.setAdapter(adapter_fndicator);
         List<BeanFndicator> listdata = new ArrayList<BeanFndicator>();
-        listdata.add(new BeanFndicator("当日收入", 1, 0));
-        listdata.add(new BeanFndicator("当日放号", 0, 1));
-        listdata.add(new BeanFndicator("期末份额", 0, 1));
-        listdata.add(new BeanFndicator("期末份额", 1, 1));
-        listdata.add(new BeanFndicator("当日放号", 0, 1));
-        listdata.add(new BeanFndicator("期末份额", 0, 1));
-        listdata.add(new BeanFndicator("当日收入", 1, 0));
-        listdata.add(new BeanFndicator("当日放号", 0, 1));
-        listdata.add(new BeanFndicator("期末份额", 0, 1));
-        listdata.add(new BeanFndicator("当日收入", 1, 0));
-        listdata.add(new BeanFndicator("当日放号", 0, 1));
-        listdata.add(new BeanFndicator("期末份额", 0, 1));
 
         recyclerview.setPage(10, 30);//必须设置setPage，否则上拉加载更多会无效
         adapter_fndicator.setNewData(listdata);
@@ -100,5 +89,22 @@ public class Fragment_Fndicator extends BaseFragment<PFndicator> {
     @Override
     public PFndicator newP() {
         return new PFndicator();
+
+    }
+
+    public void showToast(String msg) {
+        getvDelegate().dismissLoading();
+        getvDelegate().toastShort(msg);
+    }
+
+    public void setData(Fndicator_Res fndicatorRes) {
+            /*
+            设置头部数据
+             */
+
+
+               /*
+            设置头部数据
+             */
     }
 }

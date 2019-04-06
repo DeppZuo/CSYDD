@@ -16,8 +16,8 @@ import java.io.Serializable;
 public class BaseResponse<T> implements Serializable{
     @SerializedName("code")
     public String code;
-    @SerializedName("message")
-    public String message;
+    @SerializedName("msg")
+    public String msg;
     @SerializedName("data")
     public T data;
 }

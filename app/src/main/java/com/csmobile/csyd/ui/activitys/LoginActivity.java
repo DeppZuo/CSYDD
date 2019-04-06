@@ -34,9 +34,7 @@ public class LoginActivity extends BaseActivity<PLogin> {
     void onclick(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
-//                getvDelegate().showLoading();
-//                getP().login("15116208831","Zuo123456");
-                startActivity(MainActivity.class);
+                getP().login("15116208831","Zuo123456");
                 break;
         }
     }

@@ -2,18 +2,14 @@ package com.csmobile.csyd.api;
 
 
 import com.csmobile.csyd.base.BaseResponse;
+import com.csmobile.csyd.model.response.Fndicator_Res;
 import com.csmobile.csyd.model.response.Login_Res;
 import com.csmobile.csyd.net.NetUrl;
 
-import java.util.List;
-
 import io.reactivex.Observable;
-import okhttp3.MultipartBody;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.Header;
 import retrofit2.http.POST;
-import retrofit2.http.Part;
 
 /**
  * @author nanchen
@@ -25,5 +21,9 @@ import retrofit2.http.Part;
 public interface ApiService {
     @FormUrlEncoded
     @POST(NetUrl.login)
-    Observable<BaseResponse<Login_Res>> login(@Field("mobile") String mobile, @Field("password") String password);
+    Observable<BaseResponse<Login_Res>> login(@Field("phone") String phone, @Field("password") String password);
+
+    @FormUrlEncoded
+    @POST(NetUrl.login)
+    Observable<BaseResponse<Fndicator_Res>> getFndicatorData(@Field("phone") String phone);
 }

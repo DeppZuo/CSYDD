@@ -15,6 +15,7 @@ import com.csmobile.csyd.api.ApiService;
 import com.csmobile.csyd.base.BaseApplication;
 import com.csmobile.csyd.base.BaseResponse;
 import com.csmobile.csyd.base.Consts;
+import com.csmobile.csyd.model.response.Fndicator_Res;
 import com.csmobile.csyd.model.response.Login_Res;
 import com.csmobile.csyd.utils.LogUtils;
 import com.csmobile.csyd.utils.ToastUtils;
@@ -177,7 +178,6 @@ public class RetrofitUtil {
     }
 
 
-
     private <T> void toSubscribe(Observable<T> observable, Observer<T> subscriber) {
         observable.subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
@@ -222,9 +222,16 @@ public class RetrofitUtil {
                 });
         return getPermission;
     }
+
     //登录
     public void toLogin(String mobile, String password, Observer<BaseResponse<Login_Res>> subscriber) {
-        toSubscribeCheck(mApiService.login( mobile, password), subscriber);
+        toSubscribeCheck(mApiService.login(mobile, password), subscriber);
     }
+
+    //获取首页数据
+    public void getFndicatorData(String phone, Observer<BaseResponse<Fndicator_Res>> subscriber) {
+        toSubscribeCheck(mApiService.getFndicatorData(phone), subscriber);
+    }
+
 }
 
