@@ -2,21 +2,13 @@ package com.csmobile.csyd.ui.activitys;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
-import android.provider.Settings;
-import android.support.annotation.NonNull;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.allenliu.versionchecklib.callback.OnCancelListener;
 import com.allenliu.versionchecklib.v2.AllenVersionChecker;
 import com.allenliu.versionchecklib.v2.builder.DownloadBuilder;
@@ -26,6 +18,7 @@ import com.csmobile.csyd.R;
 import com.csmobile.csyd.base.BaseActivity;
 import com.csmobile.csyd.base.XFragmentAdapter;
 import com.csmobile.csyd.model.response.CheckVersionResults;
+import com.csmobile.csyd.model.response.Fndicator_Res;
 import com.csmobile.csyd.present.PMainActivity;
 import com.csmobile.csyd.ui.fragments.Fragment_Fndicator;
 import com.csmobile.csyd.utils.StringUtils;
@@ -37,7 +30,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import io.reactivex.functions.Consumer;
-import rx.functions.Action1;
 
 public class MainActivity extends BaseActivity<PMainActivity> {
     @BindView(R.id.ll_state_bar)
@@ -46,8 +38,32 @@ public class MainActivity extends BaseActivity<PMainActivity> {
     TabLayout tabLayout;
     @BindView(R.id.processplan_viewPager)
     ViewPager viewPager;
+    @BindView(R.id.tv_gridnm)
+    TextView tv_gridnm;
     @BindView(R.id.tv_chlnum)
-    TextView tv_chlnum;//渠道数字
+    TextView tv_chlnum;
+    @BindView(R.id.tv_statnum)
+    TextView tv_statnum;
+    @BindView(R.id.tv_statusernum)
+    TextView tv_statusernum;
+    @BindView(R.id.tv_groupnum)
+    TextView tv_groupnum;
+    @BindView(R.id.tv_grpusernum)
+    TextView tv_grpusernum;
+    @BindView(R.id.tv_todayin)
+    TextView tv_todayin;
+    @BindView(R.id.tv_commnum)
+    TextView tv_commnum;
+    @BindView(R.id.tv_monthin)
+    TextView tv_monthin;
+    @BindView(R.id.tv_lastmonthin)
+    TextView tv_lastmonthin;
+    @BindView(R.id.tv_monthshare)
+    TextView tv_monthshare;
+    @BindView(R.id.tv_lastmonthshare)
+    TextView tv_lastmonthshare;
+    @BindView(R.id.tv_name)
+    TextView tv_name;
     List<Fragment> fragmentList = new ArrayList<>();
     String[] titles = {"所有指标", "本月重要指标"};
     XFragmentAdapter adapter;
@@ -149,5 +165,27 @@ public class MainActivity extends BaseActivity<PMainActivity> {
             }
         });
 
+    }
+
+    public void setTopdata(Fndicator_Res fndicatorRes) {
+/*
+            设置头部数据
+             */
+        tv_chlnum.setText(fndicatorRes.chlNum);
+        tv_gridnm.setText(fndicatorRes.gridNm);
+        tv_groupnum.setText(fndicatorRes.grpNum);
+        tv_grpusernum.setText(fndicatorRes.grpUserNum);
+        tv_lastmonthshare.setText(fndicatorRes.lastMonthShare);
+        tv_lastmonthin.setText(fndicatorRes.lastMonthIn);
+        tv_monthin.setText(fndicatorRes.monthIn);
+        tv_monthshare.setText(fndicatorRes.monthShare);
+        tv_statnum.setText(fndicatorRes.statNum);
+        tv_todayin.setText(fndicatorRes.todayIn);
+        tv_name.setText(fndicatorRes.staffNm);
+        tv_commnum.setText(fndicatorRes.commNum);
+        tv_statusernum.setText(fndicatorRes.statUserNum);
+               /*
+            设置头部数据
+             */
     }
 }

@@ -20,10 +20,10 @@ import retrofit2.http.POST;
 
 public interface ApiService {
     @FormUrlEncoded
-    @POST(NetUrl.login)
+    @POST(NetUrl.LOGIN)
     Observable<BaseResponse<Login_Res>> login(@Field("phone") String phone, @Field("password") String password);
 
     @FormUrlEncoded
-    @POST(NetUrl.login)
+    @POST(NetUrl.INITHOME)
     Observable<BaseResponse<Fndicator_Res>> getFndicatorData(@Field("phone") String phone);
 }

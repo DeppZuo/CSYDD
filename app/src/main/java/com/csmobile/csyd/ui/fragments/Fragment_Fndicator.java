@@ -4,12 +4,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
+import android.widget.TextView;
 
 import com.csmobile.csyd.R;
 import com.csmobile.csyd.base.BaseFragment;
 import com.csmobile.csyd.model.bean.BeanFndicator;
 import com.csmobile.csyd.model.response.Fndicator_Res;
 import com.csmobile.csyd.present.PFndicator;
+import com.csmobile.csyd.ui.activitys.MainActivity;
 import com.csmobile.csyd.ui.adapter.Adapter_Fndicator;
 import com.csmobile.csyd.utils.ToastUtils;
 import com.csmobile.csyd.views.MultipleStatusView;
@@ -33,7 +35,7 @@ public class Fragment_Fndicator extends BaseFragment<PFndicator> {
     @BindView(R.id.processplan_multiplestatusview)
     MultipleStatusView multiplestatusview;
     private Adapter_Fndicator adapter_fndicator;
-
+    private MainActivity mainActivity;
     public static Fragment_Fndicator newInstance(String type) {
         Fragment_Fndicator fragment = new Fragment_Fndicator();
         Bundle bundle = new Bundle();
@@ -49,6 +51,7 @@ public class Fragment_Fndicator extends BaseFragment<PFndicator> {
 
     @Override
     public void initData(Bundle savedInstanceState) {
+        mainActivity = (MainActivity) getActivity();
         adapter_fndicator = new Adapter_Fndicator(R.layout.item_fndicator);
         recyclerview.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         recyclerview.setAdapter(adapter_fndicator);
@@ -79,6 +82,7 @@ public class Fragment_Fndicator extends BaseFragment<PFndicator> {
                 }, 3000);
             }
         });
+        getP().getData("13973198515");
     }
 
     @Override
@@ -98,13 +102,7 @@ public class Fragment_Fndicator extends BaseFragment<PFndicator> {
     }
 
     public void setData(Fndicator_Res fndicatorRes) {
-            /*
-            设置头部数据
-             */
-
-
-               /*
-            设置头部数据
-             */
+        adapter_fndicator.setNewData(fndicatorRes.list);
+        mainActivity.setTopdata(fndicatorRes);
     }
 }
