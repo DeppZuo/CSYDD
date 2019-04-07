@@ -1,5 +1,6 @@
 package com.csmobile.csyd.present;
 
+import com.csmobile.csyd.base.BaseApplication;
 import com.csmobile.csyd.base.BaseResponse;
 import com.csmobile.csyd.base.Consts;
 import com.csmobile.csyd.model.response.Login_Res;
@@ -15,13 +16,14 @@ import com.csmobile.csyd.ui.activitys.MainActivity;
  * <p>创建时间：2019/4/2<p>
  */
 public class PLogin extends XPresent<LoginActivity> {
-    public void login(String mobile, String password) {
+    public void login(final String mobile, String password) {
         getV().getvDelegate().showLoading();
         RetrofitUtil.getInstance(getV()).toLogin(mobile, password, new ResponseObserver<BaseResponse<Login_Res>>() {
             @Override
             public void onNext(BaseResponse<Login_Res> login_resBaseResponse) {
                 try {
                     if (login_resBaseResponse.code.equals(Consts.RESCODE_SUCCESS)) {
+                        BaseApplication.getInstance().setPhone(mobile);
                             getV().startActivity(MainActivity.class);
                             getV().finish();
                     }else {

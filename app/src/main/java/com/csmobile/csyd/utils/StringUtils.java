@@ -1,9 +1,11 @@
 package com.csmobile.csyd.utils;
 
+import android.content.res.Resources;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.AbsoluteSizeSpan;
+import android.util.TypedValue;
 import android.widget.TextView;
 
 import java.math.BigDecimal;
@@ -113,6 +115,13 @@ public class StringUtils {
             return false;
         }
         return true;
+    }
+
+    public static double strtodouble(String str){
+        if(isDoubleStr(str)){
+            return Double.parseDouble(str);
+        }
+        return 0.00;
     }
 
     public static boolean isWeakPwd(String pwd) {
@@ -673,5 +682,9 @@ public class StringUtils {
            e.printStackTrace();
            textView.setText(str);
        }
+    }
+    public static int dp2px(int dp) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
+                Resources.getSystem().getDisplayMetrics());
     }
 }

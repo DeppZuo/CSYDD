@@ -2,10 +2,13 @@ package com.csmobile.csyd.ui.activitys;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.csmobile.csyd.R;
 import com.csmobile.csyd.base.BaseActivity;
 import com.csmobile.csyd.present.PLogin;
+import com.csmobile.csyd.utils.StringUtils;
 import com.gyf.barlibrary.ImmersionBar;
 
 import butterknife.BindView;
@@ -19,7 +22,10 @@ import butterknife.OnClick;
 public class LoginActivity extends BaseActivity<PLogin> {
     @BindView(R.id.ll_state_bar)
     View mLlStateBar;
-
+    @BindView(R.id.ed_phone)
+    EditText ed_phone;
+    @BindView(R.id.ed_password)
+    EditText ed_password;
     @Override
     public int getLayoutId() {
         return R.layout.login_activity;
@@ -34,7 +40,12 @@ public class LoginActivity extends BaseActivity<PLogin> {
     void onclick(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
-                getP().login("13973198515","13973198515");
+                if (StringUtils.isNull(ed_phone.getText().toString().trim())||ed_phone.getText().toString().length()<11||ed_phone.getText().toString().length()>11||StringUtils.isNull(ed_password.getText().toString().trim()))
+                {
+                    showToast("请输入正确的手机号码及密码");
+                    return;
+                }
+                getP().login(ed_phone.getText().toString().trim(),ed_password.getText().toString().trim());
                 break;
         }
     }

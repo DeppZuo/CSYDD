@@ -12,6 +12,8 @@ public class BeanFndicator {
     public int rank;//排名
     public String quotaId;//指标ID
     public String showOrd;//指标展示顺序
-    public String dayUpRatio;//日环比
-    public String monthUpRatio;//月环比
+    public String timeLeadRate;//超时率
+    public String goalData;//目标值
+    public String historyData;//累计净增
+    public String quotaNm;//名称
 }

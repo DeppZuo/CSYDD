@@ -1,13 +1,18 @@
 package com.csmobile.csyd.ui.adapter;
 
-import android.support.annotation.NonNull;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.RelativeLayout;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.csmobile.csyd.R;
+import com.csmobile.csyd.base.BaseApplication;
 import com.csmobile.csyd.model.bean.BeanFndicator;
+import com.csmobile.csyd.utils.LogUtils;
+import com.csmobile.csyd.utils.StringUtils;
 
 /**
  * <p>文件描述：<p>
@@ -19,22 +24,34 @@ public class Adapter_Fndicator extends BaseQuickAdapter<BeanFndicator, BaseViewH
         super(layoutResId);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void convert(BaseViewHolder helper, BeanFndicator bean) {
 //        helper.setText(R.id.tv_title, bean.staffNm);
         View ll_month_day = helper.getView(R.id.ll_month_day);
         View ll_up_down = helper.getView(R.id.ll_up_down);
-        helper.setText(R.id.tv_title,"当日收入");
-        helper.setText(R.id.tv_topnub,bean.dayData);
-        helper.setText(R.id.tv_rank,""+bean.rank);
-        helper.setText(R.id.tv_dayneed,"");
-        helper.setText(R.id.tv_dayupratio,bean.dayUpRatio);
-        helper.setText(R.id.tv_monthupratio,bean.monthUpRatio);
-        helper.setText(R.id.tv_month,"");
-        if(bean.rank<=10){
-            helper.setTextColor(R.id.tv_rank,mContext.getResources().getColor(R.color.color_red));
+        View im_progress = helper.getView(R.id.im_progress);
+        View im_bg_progress = helper.getView(R.id.im_bg_progress);
+        helper.setText(R.id.tv_title, bean.quotaNm);
+        helper.setText(R.id.tv_topnub, bean.dayData);
+        helper.setText(R.id.tv_rank, "" + bean.rank);
+        helper.setText(R.id.tv_dayneed, "" + bean.monthData);
+        helper.setText(R.id.tv_dayupratio, bean.historyData);
+        helper.setText(R.id.tv_monthupratio, bean.goalData);
+        helper.setText(R.id.tv_cpratio, "任务率 " + bean.cpRatio + "%");
+        helper.setText(R.id.tv_month, bean.timeLeadRate+ "%");
+        if(bean.timeLeadRate.contains("-")){
+            setProgress(im_progress, StringUtils.strtodouble(bean.cpRatio),(BaseApplication.getInstance().getWith()-StringUtils.dp2px(40))/2);
+            im_progress.setBackground(mContext.getDrawable(R.drawable.bg_green_pro));
         }else {
-            helper.setTextColor(R.id.tv_rank,mContext.getResources().getColor(R.color.color_green));
+            im_progress.setBackground(mContext.getDrawable(R.drawable.bg_red_pro));
+            setProgress(im_progress, 100,(BaseApplication.getInstance().getWith()-StringUtils.dp2px(40))/2);
+        }
+
+        if (bean.rank <= 10) {
+            helper.setTextColor(R.id.tv_rank, mContext.getResources().getColor(R.color.color_red));
+        } else {
+            helper.setTextColor(R.id.tv_rank, mContext.getResources().getColor(R.color.color_green));
         }
 //        if (bean.type_up == 0) {
 //            ll_month_day.setVisibility(View.VISIBLE);
@@ -52,5 +69,13 @@ public class Adapter_Fndicator extends BaseQuickAdapter<BeanFndicator, BaseViewH
 //            helper.getView(R.id.tv_up).setVisibility(View.VISIBLE);
 //            helper.setImageResource(R.id.im_updown_flag, R.mipmap.icon_arrow_up);
 //        }
+    }
+
+    private void setProgress(View view, double proress, int with) {
+        LogUtils.i("with===="+with);
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) view.getLayoutParams();
+        params.width = (int) (proress*with);
+        view.setLayoutParams(params);
+
     }
 }

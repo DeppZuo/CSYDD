@@ -5,6 +5,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 
 import com.csmobile.csyd.R;
+import com.csmobile.csyd.base.BaseApplication;
 import com.csmobile.csyd.base.BaseFragment;
 import com.csmobile.csyd.model.bean.BeanFndicator;
 import com.csmobile.csyd.model.response.Fndicator_Res;
@@ -77,17 +78,18 @@ public class Fragment_Fndicator extends BaseFragment<PFndicator> {
             @Override
             public void onRefresh() {
                 if(getType().equals("ALL")){
-                    getP().getALLData("13973198515");
+                    getP().getALLData( BaseApplication.getInstance().gethone());
                 }else {
-                    getP().getMONTHData("13973198515");
+                    getP().getMONTHData(BaseApplication.getInstance().gethone());
                 }
 
             }
         });
         if(getType().equals("ALL")){
-            getP().getALLData("13973198515");
+            getP().getALLData(BaseApplication.getInstance().gethone());
         }else {
-            getP().getMONTHData("13973198515");
+            getP().getMONTHData(BaseApplication.getInstance().gethone());
+//            getP().getMONTHData("13973198515");
         }
         if (savedInstanceState == null) {
             multiplestatusview.showLoading();

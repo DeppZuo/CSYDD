@@ -1,14 +1,12 @@
 package com.csmobile.csyd.base;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -20,7 +18,6 @@ import com.csmobile.csyd.mvp.IPresent;
 import com.csmobile.csyd.mvp.IView;
 import com.csmobile.csyd.mvp.VDelegate;
 import com.csmobile.csyd.mvp.VDelegateBase;
-import com.csmobile.csyd.utils.LogUtils;
 import com.gyf.barlibrary.ImmersionBar;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
@@ -44,12 +41,18 @@ public abstract class BaseActivity<P extends IPresent> extends RxAppCompatActivi
     private VDelegate vDelegate;
     private P p;
     public BaseApplication bapp;
-
+    public int mWidth;
+    protected int mHeight;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = this;
         bapp = (BaseApplication) getApplication();
+        DisplayMetrics metric = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metric);
+        mWidth = metric.widthPixels;
+        mHeight = metric.heightPixels;
+        bapp.setWith(mWidth);
         if (getLayoutId() > 0) {
             setContentView(getLayoutId());
             bindUI(null);

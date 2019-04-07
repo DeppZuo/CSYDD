@@ -1,14 +1,10 @@
 package com.csmobile.csyd.base;
 
-import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.multidex.MultiDex;
-import android.util.Log;
-
 
 import com.csmobile.csyd.BuildConfig;
 import com.orhanobut.logger.AndroidLogAdapter;
@@ -17,7 +13,6 @@ import com.orhanobut.logger.Logger;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.Stack;
 
 
 /**
@@ -57,6 +52,26 @@ public class BaseApplication extends Application {
 
     public int getTopDp() {
         return topdp;
+    }
+
+    private int with = 0;
+
+    public int getWith() {
+        return with;
+    }
+
+    public void setWith(int with) {
+        this.with = with;
+    }
+
+    private String phone;
+
+    public String gethone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public void setTopDp(int dp) {
