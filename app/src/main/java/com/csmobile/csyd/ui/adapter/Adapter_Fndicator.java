@@ -41,7 +41,7 @@ public class Adapter_Fndicator extends BaseQuickAdapter<BeanFndicator, BaseViewH
         helper.setText(R.id.tv_cpratio, "任务率 " + bean.cpRatio + "%");
         helper.setText(R.id.tv_month, bean.timeLeadRate+ "%");
         if(bean.timeLeadRate.contains("-")){
-            setProgress(im_progress, StringUtils.strtodouble(bean.cpRatio),(BaseApplication.getInstance().getWith()-StringUtils.dp2px(40))/2);
+            setProgress(im_progress, StringUtils.strtodouble(bean.cpRatio)/100,(BaseApplication.getInstance().getWith()-StringUtils.dp2px(40))/2);
             im_progress.setBackground(mContext.getDrawable(R.drawable.bg_green_pro));
         }else {
             im_progress.setBackground(mContext.getDrawable(R.drawable.bg_red_pro));
