@@ -18,5 +18,6 @@ public class Fndicator_Res {
     public String lastMonthIn;// 上月收入
     public String commNum;// 小区数
     public String todayIn;// 当日收入
+    public String today;//日期
     public List<BeanFndicator>list;
 }

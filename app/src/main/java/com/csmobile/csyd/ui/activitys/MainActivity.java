@@ -64,6 +64,8 @@ public class MainActivity extends BaseActivity<PMainActivity> {
     TextView tv_lastmonthshare;
     @BindView(R.id.tv_name)
     TextView tv_name;
+    @BindView(R.id.tv_time)
+    TextView tv_time;
     List<Fragment> fragmentList = new ArrayList<>();
     String[] titles = {"所有指标", "本月重要指标"};
     XFragmentAdapter adapter;
@@ -184,6 +186,7 @@ public class MainActivity extends BaseActivity<PMainActivity> {
         tv_name.setText(fndicatorRes.staffNm);
         tv_commnum.setText(fndicatorRes.commNum);
         tv_statusernum.setText(fndicatorRes.statUserNum);
+        tv_time.setText(StringUtils.formatDate4(fndicatorRes.today));
                /*
             设置头部数据
              */
