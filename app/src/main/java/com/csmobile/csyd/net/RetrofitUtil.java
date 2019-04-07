@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.provider.Settings;
-import android.text.TextUtils;
 
 import com.csmobile.csyd.BuildConfig;
 import com.csmobile.csyd.api.ApiService;
@@ -23,13 +22,10 @@ import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import org.json.JSONObject;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.SSLContext;
@@ -43,11 +39,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.Interceptor;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -231,6 +224,11 @@ public class RetrofitUtil {
     //获取首页数据
     public void getFndicatorData(String phone, Observer<BaseResponse<Fndicator_Res>> subscriber) {
         toSubscribeCheck(mApiService.getFndicatorData(phone), subscriber);
+    }
+
+    //获取首页数据
+    public void getMONTHData(String phone, Observer<BaseResponse<Fndicator_Res>> subscriber) {
+        toSubscribeCheck(mApiService.gethomeKeyQuota(phone), subscriber);
     }
 
 }

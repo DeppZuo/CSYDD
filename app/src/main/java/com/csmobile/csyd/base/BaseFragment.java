@@ -19,8 +19,14 @@ import com.gyf.barlibrary.ImmersionBar;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.trello.rxlifecycle.components.support.RxFragment;
 
+import java.net.ConnectException;
+import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+
+import static com.csmobile.csyd.utils.ToastUtils.showToast;
 
 /**
  * <p>文件描述：<p>
@@ -118,4 +124,16 @@ public abstract class BaseFragment<P extends IPresent> extends RxFragment implem
     public void startActivity(Class<?> cls) {
         getActivity().startActivity(new Intent(getActivity(), cls));
     }
+
+    public void handError(Throwable e) {//处理返回的异常信息
+        getvDelegate().dismissLoading();
+        if (e instanceof SocketTimeoutException) {
+            showToast("网络请求超时，请重新加载");
+        } else if (e instanceof ConnectException || e instanceof UnknownHostException) {
+            showToast("网络连接断开,请检查您的网络设置");
+        } else {
+            showToast("网络繁忙，请稍后再试");
+        }
+    }
+
 }

@@ -6,10 +6,12 @@ package com.csmobile.csyd.model.bean;
  * <p>创建时间：2019/4/2<p>
  */
 public class BeanFndicator {
-    public double monthData;// 当月数据
-    public double cpRatio;// 完成率
-    public int dayData;//当日数据
+    public String monthData;// 当月数据
+    public String cpRatio;// 完成率
+    public String dayData;//当日数据
     public int rank;//排名
-    public int quotaId;//指标ID
-    public int showOrd;//指标展示顺序
+    public String quotaId;//指标ID
+    public String showOrd;//指标展示顺序
+    public String dayUpRatio;//日环比
+    public String monthUpRatio;//月环比
 }

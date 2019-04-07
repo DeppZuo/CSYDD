@@ -87,8 +87,8 @@ public class MainActivity extends BaseActivity<PMainActivity> {
     public void initData(Bundle savedInstanceState) {
         setStatusBarLinearLayout(mLlStateBar);
         fragmentList.clear();
-        fragmentList.add(Fragment_Fndicator.newInstance(""));
-        fragmentList.add(Fragment_Fndicator.newInstance(""));
+        fragmentList.add(Fragment_Fndicator.newInstance("ALL"));
+        fragmentList.add(Fragment_Fndicator.newInstance("MONTH"));
         if (adapter == null) {
             adapter = new XFragmentAdapter(getSupportFragmentManager(), fragmentList, titles);
         }

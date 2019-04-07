@@ -1,21 +1,22 @@
 package com.csmobile.csyd.ui.fragments;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
-import android.widget.TextView;
 
 import com.csmobile.csyd.R;
 import com.csmobile.csyd.base.BaseFragment;
 import com.csmobile.csyd.model.bean.BeanFndicator;
 import com.csmobile.csyd.model.response.Fndicator_Res;
+import com.csmobile.csyd.net.NetError;
 import com.csmobile.csyd.present.PFndicator;
 import com.csmobile.csyd.ui.activitys.MainActivity;
 import com.csmobile.csyd.ui.adapter.Adapter_Fndicator;
-import com.csmobile.csyd.utils.ToastUtils;
 import com.csmobile.csyd.views.MultipleStatusView;
 
+import java.net.ConnectException;
+import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +44,9 @@ public class Fragment_Fndicator extends BaseFragment<PFndicator> {
         fragment.setArguments(bundle);
         return fragment;
     }
-
+    public String getType() {
+        return getArguments().getString("type");
+    }
     @Override
     public void bindEvent() {
 
@@ -67,22 +70,28 @@ public class Fragment_Fndicator extends BaseFragment<PFndicator> {
 
             @Override
             public void onLoadMore(int page) {
-                ToastUtils.showToast("加载更多");
+//                ToastUtils.showToast("加载更多");
             }
         });
         swiperefreshlayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                ToastUtils.showToast("刷新");
-                new Handler().postDelayed(new Runnable() {
-                    public void run() {
-                        //execute the task
-                        swiperefreshlayout.setRefreshing(false);
-                    }
-                }, 3000);
+                if(getType().equals("ALL")){
+                    getP().getALLData("13973198515");
+                }else {
+                    getP().getMONTHData("13973198515");
+                }
+
             }
         });
-        getP().getData("13973198515");
+        if(getType().equals("ALL")){
+            getP().getALLData("13973198515");
+        }else {
+            getP().getMONTHData("13973198515");
+        }
+        if (savedInstanceState == null) {
+            multiplestatusview.showLoading();
+        }
     }
 
     @Override
@@ -100,8 +109,29 @@ public class Fragment_Fndicator extends BaseFragment<PFndicator> {
         getvDelegate().dismissLoading();
         getvDelegate().toastShort(msg);
     }
+    public void showError(NetError error) {
+        getvDelegate().showError(error);
+    }
 
+    public void showEmptyView(String msg) {
+        multiplestatusview.showEmpty(msg);
+    }
+    public void handErrorList(Throwable e) {//处理返回的异常信息
+        getvDelegate().dismissLoading();
+        if (e instanceof SocketTimeoutException) {
+            showEmptyView("网络请求超时，请重新加载");
+        } else if (e instanceof ConnectException || e instanceof UnknownHostException) {
+            showEmptyView("网络连接断开,请检查您的网络设置");
+        } else {
+            showEmptyView("网络繁忙，请稍后再试");
+        }
+    }
     public void setData(Fndicator_Res fndicatorRes) {
+        if(fndicatorRes.list.size()==0){
+            showEmptyView("暂无数据");
+        }
+        multiplestatusview.showContent();
+        swiperefreshlayout.setRefreshing(false);
         adapter_fndicator.setNewData(fndicatorRes.list);
         mainActivity.setTopdata(fndicatorRes);
     }

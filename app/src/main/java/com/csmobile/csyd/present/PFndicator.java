@@ -14,8 +14,37 @@ import com.csmobile.csyd.ui.fragments.Fragment_Fndicator;
  * <p>创建时间：2019/4/2<p>
  */
 public class PFndicator extends XPresent<Fragment_Fndicator> {
-    public void getData(String phone) {
+    public void getALLData(String phone) {
         RetrofitUtil.getInstance(getV().getActivity()).getFndicatorData(phone, new ResponseObserver<BaseResponse<Fndicator_Res>>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onNext(BaseResponse<Fndicator_Res> fndicator_resBaseResponse) {
+                try {
+                    if (fndicator_resBaseResponse.code.equals(Consts.RESCODE_SUCCESS)) {
+                        getV().setData(fndicator_resBaseResponse.data);
+                    } else {
+                        getV().showToast(fndicator_resBaseResponse.msg);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                getV().handErrorList(e);
+            }
+        });
+    }
+
+
+
+    public void getMONTHData(String phone) {
+        RetrofitUtil.getInstance(getV().getActivity()).getMONTHData(phone, new ResponseObserver<BaseResponse<Fndicator_Res>>() {
             @Override
             public void onCompleted() {
 

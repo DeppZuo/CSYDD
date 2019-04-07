@@ -24,6 +24,18 @@ public class Adapter_Fndicator extends BaseQuickAdapter<BeanFndicator, BaseViewH
 //        helper.setText(R.id.tv_title, bean.staffNm);
         View ll_month_day = helper.getView(R.id.ll_month_day);
         View ll_up_down = helper.getView(R.id.ll_up_down);
+        helper.setText(R.id.tv_title,"当日收入");
+        helper.setText(R.id.tv_topnub,bean.dayData);
+        helper.setText(R.id.tv_rank,""+bean.rank);
+        helper.setText(R.id.tv_dayneed,"");
+        helper.setText(R.id.tv_dayupratio,bean.dayUpRatio);
+        helper.setText(R.id.tv_monthupratio,bean.monthUpRatio);
+        helper.setText(R.id.tv_month,"");
+        if(bean.rank<=10){
+            helper.setTextColor(R.id.tv_rank,mContext.getResources().getColor(R.color.color_red));
+        }else {
+            helper.setTextColor(R.id.tv_rank,mContext.getResources().getColor(R.color.color_green));
+        }
 //        if (bean.type_up == 0) {
 //            ll_month_day.setVisibility(View.VISIBLE);
 //            ll_up_down.setVisibility(View.INVISIBLE);

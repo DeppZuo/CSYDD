@@ -26,4 +26,9 @@ public interface ApiService {
     @FormUrlEncoded
     @POST(NetUrl.INITHOME)
     Observable<BaseResponse<Fndicator_Res>> getFndicatorData(@Field("phone") String phone);
+
+
+    @FormUrlEncoded
+    @POST(NetUrl.HOMEKEYQUOTA)
+    Observable<BaseResponse<Fndicator_Res>> gethomeKeyQuota(@Field("phone") String phone);
 }
