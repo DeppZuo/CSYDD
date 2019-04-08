@@ -687,4 +687,10 @@ public class StringUtils {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
                 Resources.getSystem().getDisplayMetrics());
     }
+
+    public static String getTwoPoint(double num) {//保留小数点后面两位
+        String str = "";
+        str = String.format("%.2f", num);
+        return str;
+    }
 }
