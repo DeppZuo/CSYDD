@@ -46,6 +46,7 @@ public class LoginActivity extends BaseActivity<PLogin> {
                     return;
                 }
                 getP().login(ed_phone.getText().toString().trim(),ed_password.getText().toString().trim());
+//                getP().login("13973198515","36212907");
                 break;
         }
     }

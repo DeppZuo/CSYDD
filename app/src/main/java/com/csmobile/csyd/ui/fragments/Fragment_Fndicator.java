@@ -135,6 +135,8 @@ public class Fragment_Fndicator extends BaseFragment<PFndicator> {
         multiplestatusview.showContent();
         swiperefreshlayout.setRefreshing(false);
         adapter_fndicator.setNewData(fndicatorRes.list);
-        mainActivity.setTopdata(fndicatorRes);
+        if(getType().equals("ALL")){
+            mainActivity.setTopdata(fndicatorRes);
+        }
     }
 }

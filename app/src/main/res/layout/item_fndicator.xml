@@ -259,10 +259,12 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="@dimen/dimen_32dp"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/dimen_48dp"
         android:layout_alignParentRight="true"
         android:layout_marginTop="@dimen/dimen_4dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
         android:layout_marginRight="@dimen/dimen_8dp"
         android:background="@mipmap/bg_rank_flag"
         android:gravity="center_horizontal"
@@ -281,6 +283,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="12"
+            android:layout_marginTop="2dp"
+            android:textStyle="bold"
             android:textColor="@color/color_green"
             android:textSize="@dimen/sp12" />
     </LinearLayout>
