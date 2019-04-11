@@ -45,11 +45,13 @@ public class Adapter_Fndicator extends BaseQuickAdapter<BeanFndicator, BaseViewH
             im_progress.setBackground(mContext.getDrawable(R.drawable.bg_green_pro));
             helper.setTextColor(R.id.tv_month, mContext.getResources().getColor(R.color.color_green));
             helper.setTextColor(R.id.tv_cpratio, mContext.getResources().getColor(R.color.color_green));
+            helper.setTextColor(R.id.tv_topnub, mContext.getResources().getColor(R.color.color_green));
         } else {
             im_progress.setBackground(mContext.getDrawable(R.drawable.bg_red_pro));
-            setProgress(im_progress, 100, (BaseApplication.getInstance().getWith() - StringUtils.dp2px(40)) / 2);
+            setProgress(im_progress, bean.cpRatio, (BaseApplication.getInstance().getWith() - StringUtils.dp2px(40)) / 2);
             helper.setTextColor(R.id.tv_month, mContext.getResources().getColor(R.color.color_red));
             helper.setTextColor(R.id.tv_cpratio, mContext.getResources().getColor(R.color.color_red));
+            helper.setTextColor(R.id.tv_topnub, mContext.getResources().getColor(R.color.color_red));
         }
 
         if (bean.rank <= 10) {
