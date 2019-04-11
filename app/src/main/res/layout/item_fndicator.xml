@@ -31,9 +31,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="100.00"
-                android:textStyle="bold"
                 android:textColor="@color/color_green"
-                android:textSize="@dimen/sp14" />
+                android:textSize="@dimen/sp18"
+                android:textStyle="bold" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -53,13 +53,28 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dimen_10dp">
 
-                        <TextView
-                            android:id="@+id/tv_cpratio"
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=""
-                            android:textColor="@color/color_white"
-                            android:textSize="@dimen/sp12" />
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="任务率 "
+                                android:textColor="@color/color_white"
+                                android:textSize="@dimen/sp10" />
+
+                            <TextView
+                                android:id="@+id/tv_cpratio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textStyle="bold"
+                                android:textColor="@color/color_white"
+                                android:textSize="@dimen/sp10" />
+                        </LinearLayout>
+
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -91,8 +106,8 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dimen_4dp"
-                        android:layout_marginTop="@dimen/dimen_8dp">
+                        android:layout_height="8dp"
+                        android:layout_marginTop="@dimen/dimen_4dp">
 
                         <ImageView
                             android:id="@+id/im_bg_progress"
@@ -126,6 +141,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dimen_4dp"
                             android:text=""
+                            android:textStyle="bold"
                             android:textColor="@color/bg_white"
                             android:textSize="@dimen/sp10" />
                     </LinearLayout>
@@ -203,6 +219,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="200.33"
+                        android:textStyle="bold"
                         android:textColor="@color/color_white"
                         android:textSize="@dimen/sp10" />
                 </LinearLayout>
@@ -226,6 +243,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="+1.02"
+                        android:textStyle="bold"
                         android:textColor="@color/color_white"
                         android:textSize="@dimen/sp10" />
                 </LinearLayout>
@@ -249,6 +267,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="12.30"
+                        android:textStyle="bold"
                         android:textColor="@color/color_blue"
                         android:textSize="@dimen/sp10" />
                 </LinearLayout>
@@ -263,13 +282,13 @@
         android:layout_height="@dimen/dimen_48dp"
         android:layout_alignParentRight="true"
         android:layout_marginTop="@dimen/dimen_4dp"
-        android:paddingLeft="2dp"
-        android:paddingRight="2dp"
         android:layout_marginRight="@dimen/dimen_8dp"
         android:background="@mipmap/bg_rank_flag"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:paddingTop="2dp">
+        android:paddingLeft="@dimen/dimen_4dp"
+        android:paddingTop="@dimen/dimen_4dp"
+        android:paddingRight="2dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -282,11 +301,11 @@
             android:id="@+id/tv_rank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="12"
             android:layout_marginTop="2dp"
-            android:textStyle="bold"
-            android:textColor="@color/color_green"
-            android:textSize="@dimen/sp12" />
+            android:text="12"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp10"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </RelativeLayout>

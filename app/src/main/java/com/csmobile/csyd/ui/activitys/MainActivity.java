@@ -67,7 +67,7 @@ public class MainActivity extends BaseActivity<PMainActivity> {
     @BindView(R.id.tv_time)
     TextView tv_time;
     List<Fragment> fragmentList = new ArrayList<>();
-    String[] titles = {"所有指标", "本月重要指标"};
+    String[] titles = {"劳动竞赛", "本月重要"};
     XFragmentAdapter adapter;
 
     @Override
