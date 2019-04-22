@@ -89,4 +89,6 @@ dependencies {
     implementation 'com.github.limedroid:ARecyclerView:v1.2.1'
     //版本更新
     implementation 'com.allenliu.versionchecklib:library:2.1.9'
+    //统计图
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 }

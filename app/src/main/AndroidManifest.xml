@@ -55,6 +55,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activitys.MainActivity" />
+        <activity android:name=".ui.activitys.IndexDetailsActivity" />
     </application>
 
 </manifest>

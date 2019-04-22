@@ -1,5 +1,6 @@
 package com.csmobile.csyd.ui.adapter;
 
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.csmobile.csyd.R;
 import com.csmobile.csyd.base.BaseApplication;
 import com.csmobile.csyd.model.bean.BeanFndicator;
+import com.csmobile.csyd.ui.activitys.IndexDetailsActivity;
 import com.csmobile.csyd.utils.LogUtils;
 import com.csmobile.csyd.utils.StringUtils;
 
@@ -32,6 +34,7 @@ public class Adapter_Fndicator extends BaseQuickAdapter<BeanFndicator, BaseViewH
         View ll_up_down = helper.getView(R.id.ll_up_down);
         View im_progress = helper.getView(R.id.im_progress);
         View tv_month = helper.getView(R.id.tv_month);
+        View ll_paraent = helper.getView(R.id.ll_paraent);
         helper.setText(R.id.tv_title, bean.quotaNm);
         helper.setText(R.id.tv_topnub, bean.dayData);
         helper.setText(R.id.tv_rank, "" + bean.rank);
@@ -59,6 +62,14 @@ public class Adapter_Fndicator extends BaseQuickAdapter<BeanFndicator, BaseViewH
         } else {
             helper.setTextColor(R.id.tv_rank, mContext.getResources().getColor(R.color.color_white));
         }
+        ll_paraent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(mContext, IndexDetailsActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     private void setProgress(View view, double proress, int with) {

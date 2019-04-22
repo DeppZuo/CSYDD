@@ -40,13 +40,14 @@ public class LoginActivity extends BaseActivity<PLogin> {
     void onclick(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
-                if (StringUtils.isNull(ed_phone.getText().toString().trim())||ed_phone.getText().toString().length()<11||ed_phone.getText().toString().length()>11||StringUtils.isNull(ed_password.getText().toString().trim()))
-                {
-                    showToast("请输入正确的手机号码及密码");
-                    return;
-                }
-                getP().login(ed_phone.getText().toString().trim(),ed_password.getText().toString().trim());
+//                if (StringUtils.isNull(ed_phone.getText().toString().trim())||ed_phone.getText().toString().length()<11||ed_phone.getText().toString().length()>11||StringUtils.isNull(ed_password.getText().toString().trim()))
+//                {
+//                    showToast("请输入正确的手机号码及密码");
+//                    return;
+//                }
+//                getP().login(ed_phone.getText().toString().trim(),ed_password.getText().toString().trim());
 //                getP().login("13975810807","A1LD1340");
+                startActivity(IndexDetailsActivity.class);
                 break;
         }
     }
